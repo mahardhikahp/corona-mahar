@@ -1,0 +1,67 @@
+.card-kasus{
+    width:300px;
+    height:150px;
+    background-color:lightblue;
+    border-radius: 15px;
+    text-align:center;
+}
+.card-meninggal{
+    width:300px;
+    height:150px;
+    background-color:lightblue;
+    border-radius: 15px;
+    text-align:center;
+}
+.card-perhari{
+    width:300px;
+    height:150px;
+    background-color: #1DB954;
+    border-radius: 15px;
+    text-align:center;
+}
+
+.viewFlex{
+    display:flex;
+}
+
+.card-kasus {
+    background-color: #efc700;
+    -webkit-box-shadow: 10px 10px 25px -4px rgba(0, 0, 0, 0.58);
+    -moz-box-shadow: 10px 10px 25px -4px rgba(0, 0, 0, 0.58);
+    box-shadow: 10px 10px 25px -4px rgba(0, 0, 0, 0.58);
+    margin-left:50px;
+}
+.card-meninggal {
+    background-color: #b54a4a;
+    -webkit-box-shadow: 10px 10px 25px -4px rgba(0, 0, 0, 0.58);
+    -moz-box-shadow: 10px 10px 25px -4px rgba(0, 0, 0, 0.58);
+    box-shadow: 10px 10px 25px -4px rgba(0, 0, 0, 0.58);
+    margin-left:50px;
+}
+
+.card-perhari {
+    background-color: #1DB954;
+    margin-left: 50px;
+    -webkit-box-shadow: 10px 10px 25px -4px rgba(0, 0, 0, 0.58);
+    -moz-box-shadow: 10px 10px 25px -4px rgba(0, 0, 0, 0.58);
+    box-shadow: 10px 10px 25px -4px rgba(0, 0, 0, 0.58);
+
+}
+
+.recovered {
+    background-color: #1DB954;
+    margin-left: 50px;
+    -webkit-box-shadow: 10px 10px 25px -4px rgba(0, 0, 0, 0.58);
+    -moz-box-shadow: 10px 10px 25px -4px rgba(0, 0, 0, 0.58);
+    box-shadow: 10px 10px 25px -4px rgba(0, 0, 0, 0.58);
+
+}
+
+.text{
+    color:white;
+}
+
+
+.text-white{
+    margin-top:20px;
+}

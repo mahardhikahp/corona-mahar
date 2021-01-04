@@ -1,0 +1,27 @@
+.info-api{
+    margin-top:50px;
+}
+
+Card{
+    width:50%;
+}
+
+
+
+
+.garis{
+    border-top: 2px solid #eaeaea;
+}
+
+
+.copy{
+    display:flex;
+}
+
+
+.kotak-contoh{
+    width:90%;
+    height:150px;
+    background-color:#f1f1f9;
+    padding: 10px;
+}

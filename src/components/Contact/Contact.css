@@ -1,0 +1,32 @@
+.foto-part{
+    text-align:center;
+    margin-top:50px;
+}
+
+.foto{
+    /* display:flex; */
+    width:500px;
+    border-radius:10px;
+}
+
+
+.biografi{
+    text-align: center;
+    margin-top:20px;
+}
+
+.contacts{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contacts .image{
+    width:3%;
+    /* opacity: 0.5; */
+}
+
+.contacts p {
+    margin: 0 10px;
+}
