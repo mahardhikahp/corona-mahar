@@ -23,7 +23,7 @@ class Contact extends Component{
                 <img src={email} className="image"></img>
                 <p><strong>2008madik@gmail.com</strong></p><br/>
                 <img src={whatsapp} className="image"></img>
-                <p><strong>2008madik@gmail.com</strong></p>
+                <p><strong>081385623783</strong></p>
                 </div>
             </div>
             </Container>

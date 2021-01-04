@@ -27,8 +27,8 @@ class Perhari extends React.Component{
             const data = res.data.data
             const fixData = data.[data.length - 1]
             console.log("data perhari", fixData)
-            const date = new Date(fixData.tanggal)
-            console.log(date)
+            const tanggal = new Date(fixData.tanggal)
+            console.log(tanggal)
             // console.log(data)
             this.setState({
                 kasusBaru : fixData.jumlahKasusBaruperHari,
