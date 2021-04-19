@@ -11,7 +11,7 @@ class Perhari extends React.Component{
         kasusBaru : '',
         meninggalPerhari: '',
         sembuhPerhari: '',
-        tanggal : ''
+        perTanggal : ''
     }
 
     componentDidMount(){
@@ -20,22 +20,36 @@ class Perhari extends React.Component{
 
 
     getData = () => {
-        const url = 'https://indonesia-covid-19.mathdro.id/api/harian'
+        const url = 'http://apicovid19indonesia-v2.vercel.app/api/indonesia/harian'
 
         axios.get(url).then((res)=>{
-            // console.log(res)
-            const data = res.data.data
-            const fixData = data.[data.length - 1]
-            console.log("data perhari", fixData)
-            const tanggal = new Date(fixData.tanggal)
-            console.log(tanggal)
-            // console.log(data)
+            console.log(res)
+            const data = res.data;
+            const dataUptodate = data[data.length - 1];
+            console.log(dataUptodate, "harusnya hari ini")
+            const fixTanggal = new Date(dataUptodate.tanggal)
+            const tanggalBaru = new Date().toISOString(dataUptodate.lastUpdate);
+            console.log(tanggalBaru)
+            
+            
             this.setState({
-                kasusBaru : fixData.jumlahKasusBaruperHari,
-                meninggalPerhari : fixData.jumlahKasusMeninggalperHari,
-                sembuhPerhari : fixData.jumlahKasusSembuhperHari,
-                tanggal : fixData.date
+                kasusBaru: dataUptodate.positif.toLocaleString(),
+                meninggalPerhari: dataUptodate.meninggal.toLocaleString(),
+                sembuhPerhari: dataUptodate.sembuh.toLocaleString(),
+                perTanggal: dataUptodate.tanggal
             })
+            // const data = res.data.data
+            // const fixData = data.[data.length - 1]
+            // console.log("data perhari", fixData)
+            // const tanggal = new Date(fixData.tanggal)
+            // console.log(tanggal)
+            // // console.log(data)
+            // this.setState({
+            //     kasusBaru : fixData.jumlahKasusBaruperHari,
+            //     meninggalPerhari : fixData.jumlahKasusMeninggalperHari,
+            //     sembuhPerhari : fixData.jumlahKasusSembuhperHari,
+            //     tanggal : fixData.date
+            // })
             
         })
     }
@@ -45,11 +59,11 @@ class Perhari extends React.Component{
 
     render(){
 
-        const {kasusBaru, meninggalPerhari, sembuhPerhari, tanggal} = this.state
+        const {kasusBaru, meninggalPerhari, sembuhPerhari, perTanggal} = this.state
 
         return(
             <div>
-                <h1 style={{textAlign:'center'}}>Data COVID-19 Per Hari {tanggal}</h1>
+                <h1 style={{textAlign:'center'}}>Data COVID-19 Per Tanggal {perTanggal}</h1>
                 <div className="viewFlex">
                 <div className="card-kasus">
                     <div className="text">
@@ -74,6 +88,8 @@ class Perhari extends React.Component{
                 </div>
             </div>
             </div>
+
+
             
         )
     }

@@ -47,9 +47,9 @@ class Provinsi extends Component{
                 {this.state.listProvinsi.map(list => (
                 <TableRow>
                     <TableCell>{list.provinsi}</TableCell>
-                    <TableCell align="right">{list.kasusPosi}</TableCell>
-                    <TableCell align="right">{list.kasusSemb}</TableCell>
-                    <TableCell align="right">{list.kasusMeni}</TableCell>
+                    <TableCell align="right">{list.kasusPosi.toLocaleString()}</TableCell>
+                    <TableCell align="right">{list.kasusSemb.toLocaleString()}</TableCell>
+                    <TableCell align="right">{list.kasusMeni.toLocaleString()}</TableCell>
                     </TableRow>
                     ))}
                 </TableBody>

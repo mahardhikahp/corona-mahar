@@ -16,7 +16,8 @@ class Home extends React.Component{
         deaths:'',
         recovered:'',
         country: '',
-        active: ''
+        active: '',
+        lastUpdate: '',
     };
 
     
@@ -26,57 +27,37 @@ class Home extends React.Component{
     }
     
     getAdvice = () => {
-        axios.get('https://api.kawalcorona.com').then((res)=>{
-            // console.log(res)
-            const data = res.data
-            console.log(data)
-
-            data.forEach((el)=>{
-                // console.log(el)
-                const getData = el.attributes
-                // console.log(getData)
-
-                if(getData.OBJECTID === 81){
-                    const indoData = []
-                    indoData.push(getData)
-                    // console.log(indoData)
-
-                    indoData.forEach((el)=>{
-                        console.log(el)
-                        this.setState({
-                            country: el.Country_Region,
-                            confirmed:el.Confirmed,
-                            deaths:el.Deaths,
-                            recovered:el.Recovered,
-                            active: el.Active
-                        })
-                    })
-                }
+        axios.get('https://covid19.mathdro.id/api/countries/ID').then((res)=>{
+            console.log(res)
+            const statistik = res.data
+            console.log(statistik)
+            
+            this.setState({
+                confirmed: statistik.confirmed.value.toLocaleString(),
+                deaths: statistik.deaths.value.toLocaleString(),
+                recovered : statistik.recovered.value.toLocaleString(),
+                lastUpdate: statistik.lastUpdate
             })
-        })
+            })
+    }
 
+    separator = (nStr) => {
+        
     }
 
 
     render(){
 
-        const {country, confirmed, deaths, recovered,active} = this.state
+        const {country, confirmed, deaths, recovered,lastUpdate} = this.state
 
         return(
             <Container>
             
             <div className="top">
-                <h1>Data COVID-19 Di {country}</h1>
+                <h1>Data COVID-19 Di Indonesia</h1>
             </div>
 
             <div className="middle-part">
-                <div className="card active">
-                <div className="text-white">
-                    <h3>Total Aktif</h3>
-                    <h1>{active}</h1>
-                    <p>Orang</p>
-                </div>
-                </div>
                 <div className="card confirmed">
                 <div className="text-white">
                     <h3>Total Positif</h3>
